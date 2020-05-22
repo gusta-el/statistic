@@ -26,6 +26,7 @@ com_eua = getLinhas(rol)
 rol.remove(eua_value)
 sem_eua = getLinhas(rol)
 
+table_data = [[0,0], [0,0], [0,0], [0,0], [0,0]]
 for x in range(0,5):
     table_data[x] = [com_eua[x], sem_eua[x]]
 
