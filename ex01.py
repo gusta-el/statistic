@@ -14,6 +14,9 @@ mediana = np.median(rol)
 desvio_padrao = np.std(rol)
 moda = stats.mode(rol)[0]
 coeficiente_variacao = variation(rol, axis=0)
+k = np.ceil(1 + (3.22 * np.log10(50)))
+amplitude = max(rol) - min(rol)
+hi = np.ceil(amplitude / k)
 
 print(DARK + QUESTION + "a) Calcule a média, desvio padrão, coeficiente de variação, moda e mediana:" + RESET)
 print(ANSWER + "Media:", round(media, 2))
@@ -23,6 +26,10 @@ print("Mediana:", round(mediana, 2))
 print("Coeficiente de variação:", round(coeficiente_variacao*100, 2), "% \n")
 
 print(DARK + QUESTION + "b) Construir o histograma dos dados apresentados: " + RESET)
+print(ANSWER + "Nº de classes (k):", k)
+print(ANSWER + "Intervalo ente as classes (hi):", hi)
+
+
 plt.hist(rol, 'doane', histtype='bar',  facecolor='blue', alpha = 0.5, edgecolor = "black")
 plt.xlabel('Milhares de $')
 plt.ylabel('Semanas')
